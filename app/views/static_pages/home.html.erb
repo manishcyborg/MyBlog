@@ -1,0 +1,51 @@
+<%= form_for :user do |u|%>
+ <br > 
+ <p>
+    <%= u.label :title %><br>
+    <%= u.text_field :title %>
+  </p>
+
+  <p>
+    <%= u.label :description %><br>
+    <%= u.text_field :description %>
+  </p>
+    
+  <p> <%= u.label :back_ground_color %><br>
+    <select name="bgcolor" id="bgcolor">
+  		<option value="#FF3300">Orange</option>
+  		<option value="#00FF00">Green</option>
+  		<option value="#0000FF">Blue</option>
+  		<option value="#FF0066">Pink</option>
+  		<option value="#FFFF00">Yellow</option>
+  		<option value="#FFFFFF">White</option>
+	</select>
+  </p>
+
+  <p>
+    <%= u.label :font %><br>
+    <select name="font" id="font">
+  		<option value="Times New Roman">Times new Roman</option>
+  		<option value="Verdana">Verdana</option>
+  		<option value="Arial">Arial</option>
+  		<option value="sans-serif">serif</option>
+	</select>
+  </p>
+
+ <br >
+  <p>
+    <%= u.submit %>
+  </p>
+  <hr >
+  <div style="background: #{current_user.bg_color};"></div>
+  <div style="background-color:#{current_user.font.nil? ? '#FFFFFF' : current_user.font}">
+  	This is the changes made in background
+  </div>
+
+  <div style="background-color:#{current_user.bgcolor.nil? ? '#FFFFFF' : current_user.bgcolor}">
+  	
+  </div>
+
+<% end %>
+
+
+
